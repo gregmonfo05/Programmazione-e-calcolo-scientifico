@@ -1,0 +1,10 @@
+Consideriamo inizialmente solo gli algoritmi originari.
+Compilando il modalità DEBUG, si nota come, all'incirca fino alla dimensione 39, l'Insertion Sort sia l'algoritmo più veloce. 
+Dalla dimensione 40 in poi, il Quick Sort diventa il più efficiente. Il motivo per cui vince l'Insertion per dimensioni basse potrebbe essere dovuto a una maggiore complessità delle operazioni
+nel Quick Sort e nel Merge Sort, che li rende, dunque, solo asintoticamente più efficienti.
+Per quanto riguarda, invece, il più lento, vince il Merge Sort fino a circa 59, superato poi dal Bubble.
+D'altra parte, compilando in modalità RELEASE, vince quasi sempre l'Insertion Sort, con qualche eccezione in cui la funzione della libreria standard std::sort ha la meglio.
+Il più lento rimane quasi sempre il Bubble, tranne per dimensioni fino a 20 dove rimane il Merge.
+Aggiungendo la versione modificata del quick sort, che usa l'insertion sort fino alla dimensione 39 anche all'interno della ricorsione, in modalità RELEASE il nuovo algoritmo diventa il più veloce fino a una dimensione di circa 58 per essere poi
+scavalcato dall'insertion sort, con qualche eccezione in cui vince la funzione std::sort. in modalità DEBUG, invece, per dimensioni minori di circa 43 l'algoritmo ottimizzato rimane il più
+veloce mentre sopra tale dimensione diventa più veloce il quick standard.
